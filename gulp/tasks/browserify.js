@@ -33,6 +33,12 @@ gulp.task('browserify', function(callback) {
       debug: config.debug
     });
 
+    if(config.transforms && config.transforms.uglifyify){
+      bundler.transform({
+        global: true
+      }, 'uglifyify');
+    }
+
     var bundle = function() {
       // Log when bundling starts
       bundleLogger.start(bundleConfig.outputName);

@@ -11,6 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var handleErrors = require('../../util/handleErrors');
 var config = require('../../config').stylus;
+var autoprefixerConfig = require('../../config').autoprefixer;
 
 gulp.task('stylus', function() {
   // TODO: Move to config
@@ -24,7 +25,7 @@ gulp.task('stylus', function() {
   .pipe(plumber())
   .pipe(stylus(config.options))
   .pipe(gulp.dest(config.dest))
-  .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+  .pipe(autoprefixer(autoprefixerConfig))
   //.pipe(gulpif(argv.prod, minifycss(minifyOptions.prod)))
   //.pipe(sourcemaps.init({loadMaps: true }))
   //.pipe(sourcemaps.write('.', { includeConent: false,  sourceRoot: '.' }))
