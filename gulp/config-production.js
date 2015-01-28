@@ -20,7 +20,8 @@ module.exports = {
     proxy: false
   },
   stylus: {
-    src: src + "/stylus/*.{styl, stylus}",
+    src: src + "/stylus/**", // files which are watched for changes, but not compiled directly
+    main: src + "/stylus/*.{styl, stylus}", // files which are compiled with all their decendants
     dest: dest,
     options: {
       compress: true,
