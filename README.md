@@ -57,22 +57,8 @@ to a `node_modules` folder in your project directory.
 gulp
 ```
 
-This will run the `watch` gulp task defined in `gulp/tasks/watch.js`, which does the following:
-- Run 'watch', which has 2 task dependencies, `['setWatch', 'browserSync']`
-- `setWatch` sets a variable that tells the browserify task whether or not to use watchify.
-- `browserSync` has `build` as a task dependecy, so that all your assets will be processed before browserSync tries to serve them to you in the browser.
-- `build` includes the following tasks: `['browserify', 'stylus', 'images', 'markup', 'copy']`
+Whole documentation for the build system can be found in the [`gulp/README.md`](https://github.com/whatwedo/gulp-boilerplate/blob/develop/gulp/README.md).
 
-### Build before going live
+## Contribution
 
-```
-gulp --env production
-```
-
-This will run the `watch` task with the settings from the config-production.js which does following:
-
-- Build to the `dist` folder
-- Compress styles and scripts
-
-### Configuration
-All paths and plugin settings have been abstracted into a centralized config object in `gulp/config-development.js`. Adapt the paths and settings to the structure and needs of your project. If you want to adjust the build process for production ready files, edit the `config-production.js`.
+**We don't merge contributions for this project** since it reflects our internal workflow. This is only a fork from another repository, so we guess you could take a look at the original source.
